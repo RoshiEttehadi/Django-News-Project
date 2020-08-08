@@ -9,6 +9,6 @@ class NewsStory(models.Model):
         get_user_model(),
         on_delete=models.CASCADE
     )
-
+    url = models.URLField(max_length=200)
 
     # image = <img src="https://picsum.photos/600">
