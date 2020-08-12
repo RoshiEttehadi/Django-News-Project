@@ -7,7 +7,8 @@ class NewsStory(models.Model):
     content = models.TextField()
     author = models.ForeignKey(
         get_user_model(),
-        on_delete=models.CASCADE
+        on_delete=models.CASCADE,
+        related_name="stories"
     )
     url = models.URLField(max_length=200)
 
