@@ -14,6 +14,8 @@
         <img src="{% static '/news/images/placeholder-5.jpg' %}">
         {{ story.content|linebreaks }}
     </div>
+    <a href="{% url 'news:StoryUpdate' story.id %}">Update Story</a>
+    <!-- <a href="{% url 'news:storyDelete' story.id %}">Delete Story</a> -->
 </div>
 
 {% endblock %}
