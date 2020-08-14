@@ -7,7 +7,7 @@
 
 {% block content %} -->
 
-<div class="story-card" id="story-card-{{ position }}">
+<div style="background-color: rgb(189, 144, 231);" class="story-card" id="story-card-{{ position }}">
     <a href="{% url 'news:story' story.id %}">
         {% if story.url %}
             <img src="{{ story.url }}">
@@ -15,7 +15,7 @@
             <img src="https://picsum.photos/600">
         {% endif %}
         <div class="story-card-text">
-            <h3 style="color: blueviolet;">{{ story.title }}</h3>
+            <h3 style="color: rgb(248, 246, 250);">{{ story.title }}</h3>
             <h4>{{ story.author }}</h4>
             <h4>{{ story.pub_date }}</h4>
             <h5 style="height:60px; line-height:20px; overflow:hidden;">{{ story.content }}</h5>

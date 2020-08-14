@@ -19,8 +19,8 @@
         {{ story.content|linebreaks }}
     </div>
     {% if user.is_authenticated and story.author == user %}
-        <a href="{% url 'news:storyUpdate' story.id %}">Update Story</a> 
-        <a href="{% url 'news:storyDelete' story.id %}">Delete Story</a> 
+        <a href="{% url 'news:createStory' story.id %}">Update Story</a> 
+        <a href="{% url 'news:deleteStory' story.id %}">Delete Story</a> 
     {% else %}
         <p></p>
     {% endif %}
