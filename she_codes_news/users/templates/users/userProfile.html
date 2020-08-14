@@ -7,11 +7,23 @@
 
 {% block content %}
 
-<div id="story-wrapper">
-    <h2>{{ users.username }}</h2>
-    <h3>{{ users.first_name }}</h3>
-    <h4>{{ users.last_name }}</h4>
-    <h5>{{ users.email }}</h5>
+<h2>Profile Details</h2>
+<p>{{ users.username }}</p>
+<p>{{ users.first_name }}</p>
+<p>{{ users.last_name }}</p>
+<p>{{ users.email }}</p>
+<br>
+<h2>User Stories</h2>
+<div>
+    <a href="{% url 'news:newsStory' %}">Add New Story</a>
+    <p></p>
+    
+</div>
+<div id="all-stories">
+    {% for story in user.stories.all %} 
+        {% include "news/storyCard.html" with story=story position=forloop.counter %}
+        <p></p>
+    {% endfor %}
 </div>
 
 {% endblock %}

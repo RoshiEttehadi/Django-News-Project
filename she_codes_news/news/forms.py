@@ -15,10 +15,4 @@ class StoryForm(ModelForm):
                     'type': 'date'
                 }
             )
-            # ),
-            # 'content': forms.TextInput(
-            #     attrs={
-            #         'class': 'stylishcontent',
-            #     }
-            # )
         }

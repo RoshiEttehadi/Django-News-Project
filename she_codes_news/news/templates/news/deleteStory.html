@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+<link rel="stylesheet" type = "text/css" href="{% static 'news/styles.css' %}">
+{% endblock %}
+
+{% block content %}
+<div >
+    <form method="POST">
+        {% csrf_token %}
+        <fieldset class="form-group">
+            <legend class = "border-bottom">Delete Post</legend>
+            <h3>Are you sure you want to delete the post? </h3>
+        </fieldset>
+        <div class="form-group">
+            <button class = "btn btn-outline-danger" type="submit">Yes, Delete</button>
+            <a href="{% url 'news:index' %}">Cancel</a>
+
+        </div>
+    </form>
+</div>
+{% endblock %}

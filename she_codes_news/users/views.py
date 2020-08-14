@@ -2,9 +2,16 @@ from django.urls import reverse_lazy
 from django.views.generic.edit import CreateView
 from django.views.generic.edit import FormView
 from django.views.generic.edit import UpdateView
+from django.views.generic.detail import DetailView
+
 from django.views import generic
 from .models import CustomUser
 from .forms import CustomUserCreationForm
+from .forms import CustomUserChangeForm
+
+from django.db import models
+from django.contrib.auth import get_user_model
+
 
 class CreateAccountView(CreateView):
     form_class = CustomUserCreationForm

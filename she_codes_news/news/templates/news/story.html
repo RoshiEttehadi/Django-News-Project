@@ -11,11 +11,18 @@
     <h2>{{ story.title }}</h2>
     <h4><a href="{% url 'users:authorview' story.author.pk %}">{{ story.author }}</a></h4>
     <div id="story-content">
-        <img src="{% static '/news/images/placeholder-5.jpg' %}">
+        {% if not story.image %} 
+            <img src="https://picsum.photos/600">
+        {% else %}
+            <img src="{{ story.image }}">
+        {% endif %}
         {{ story.content|linebreaks }}
     </div>
-    <a href="{% url 'news:StoryUpdate' story.id %}">Update Story</a>
-    <!-- <a href="{% url 'news:storyDelete' story.id %}">Delete Story</a> -->
+    {% if user.is_authenticated and story.author == user %}
+        <a href="{% url 'news:storyUpdate' story.id %}">Update Story</a> 
+        <a href="{% url 'news:storyDelete' story.id %}">Delete Story</a> 
+    {% else %}
+        <p></p>
+    {% endif %}
 </div>
-
 {% endblock %}

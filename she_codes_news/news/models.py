@@ -12,4 +12,3 @@ class NewsStory(models.Model):
     )
     url = models.URLField(max_length=200)
 
-    # image = <img src="https://picsum.photos/600">

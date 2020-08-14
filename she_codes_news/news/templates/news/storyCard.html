@@ -1,3 +1,12 @@
+<!-- {% extends "base.html" %}
+{% load static %}
+
+{% block stylesheets %}
+<Link rel='stylesheet' type='text/css' href="{% static 'news/styles3.css' %}">
+{% endblock %}
+
+{% block content %} -->
+
 <div class="story-card" id="story-card-{{ position }}">
     <a href="{% url 'news:story' story.id %}">
         {% if story.url %}
@@ -6,9 +15,12 @@
             <img src="https://picsum.photos/600">
         {% endif %}
         <div class="story-card-text">
-            <h3>{{ story.title }}</h3>
+            <h3 style="color: blueviolet;">{{ story.title }}</h3>
             <h4>{{ story.author }}</h4>
             <h4>{{ story.pub_date }}</h4>
+            <h5 style="height:60px; line-height:20px; overflow:hidden;">{{ story.content }}</h5>
         </div>
     </a>
 </div>
+
+<!-- {% endblock %} -->
